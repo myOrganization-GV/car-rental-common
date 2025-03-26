@@ -1,15 +1,15 @@
-package com.gui.car_rental_common.commands;
+package com.gui.car_rental_common.events.inventory;
 
 import java.util.UUID;
 
-public class ReserveCarCommand {
+public class CarReservedEvent {
     private UUID carId;
     private UUID sagaTransactionId;
 
-    public ReserveCarCommand() {
+    public CarReservedEvent() {
     }
 
-    public ReserveCarCommand(UUID carId, UUID sagaTransactionId) {
+    public CarReservedEvent(UUID carId, UUID sagaTransactionId) {
         this.carId = carId;
         this.sagaTransactionId = sagaTransactionId;
     }
@@ -29,7 +29,4 @@ public class ReserveCarCommand {
     public void setSagaTransactionId(UUID sagaTransactionId) {
         this.sagaTransactionId = sagaTransactionId;
     }
-
-
-
 }

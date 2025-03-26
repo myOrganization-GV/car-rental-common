@@ -2,24 +2,24 @@ package com.gui.car_rental_common.commands;
 
 import java.util.UUID;
 
-public class ReserveCarCommand {
-    private UUID carId;
-    private UUID sagaTransactionId;
+public class GetUserInfoCommand {
 
-    public ReserveCarCommand() {
+    private String email;
+    private UUID sagaTransactionId;
+    public GetUserInfoCommand() {
     }
 
-    public ReserveCarCommand(UUID carId, UUID sagaTransactionId) {
-        this.carId = carId;
+    public GetUserInfoCommand(String email, UUID sagaTransactionId) {
+        this.email = email;
         this.sagaTransactionId = sagaTransactionId;
     }
 
-    public UUID getCarId() {
-        return carId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCarId(UUID carId) {
-        this.carId = carId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public UUID getSagaTransactionId() {
@@ -29,7 +29,4 @@ public class ReserveCarCommand {
     public void setSagaTransactionId(UUID sagaTransactionId) {
         this.sagaTransactionId = sagaTransactionId;
     }
-
-
-
 }
