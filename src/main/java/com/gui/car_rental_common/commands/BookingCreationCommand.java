@@ -1,54 +1,46 @@
 package com.gui.car_rental_common.commands;
 
+import com.gui.car_rental_common.dtos.BookingDto;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class BookingCreationCommand {
-    private UUID carId;
-    private LocalDateTime rentalStartDate;
-    private LocalDateTime rentalEndDate;
     private UUID sagaTransactionId;
-
+    private BookingDto bookingDto;
+    private BigDecimal pricePerDay;
 
     public BookingCreationCommand() {
     }
 
-    public BookingCreationCommand(UUID carId, LocalDateTime rentalStartDate, LocalDateTime rentalEndDate, UUID sagaTransactionId) {
-        this.carId = carId;
-        this.rentalStartDate = rentalStartDate;
-        this.rentalEndDate = rentalEndDate;
+    public BookingCreationCommand(UUID sagaTransactionId, BookingDto bookingDto, BigDecimal pricePerDay) {
         this.sagaTransactionId = sagaTransactionId;
-    }
-
-    public UUID getCarId() {
-        return carId;
-    }
-
-    public void setCarId(UUID carId) {
-        this.carId = carId;
-    }
-
-    public LocalDateTime getRentalStartDate() {
-        return rentalStartDate;
-    }
-
-    public void setRentalStartDate(LocalDateTime rentalStartDate) {
-        this.rentalStartDate = rentalStartDate;
-    }
-
-    public LocalDateTime getRentalEndDate() {
-        return rentalEndDate;
-    }
-
-    public void setRentalEndDate(LocalDateTime rentalEndDate) {
-        this.rentalEndDate = rentalEndDate;
+        this.bookingDto = bookingDto;
+        this.pricePerDay = pricePerDay;
     }
 
     public UUID getSagaTransactionId() {
         return sagaTransactionId;
     }
 
+    public BookingDto getBookingDto() {
+        return bookingDto;
+    }
+
+    public BigDecimal getPricePerDay() {
+        return pricePerDay;
+    }
+
     public void setSagaTransactionId(UUID sagaTransactionId) {
         this.sagaTransactionId = sagaTransactionId;
+    }
+
+    public void setBookingDto(BookingDto bookingDto) {
+        this.bookingDto = bookingDto;
+    }
+
+    public void setPricePerDay(BigDecimal pricePerDay) {
+        this.pricePerDay = pricePerDay;
     }
 }

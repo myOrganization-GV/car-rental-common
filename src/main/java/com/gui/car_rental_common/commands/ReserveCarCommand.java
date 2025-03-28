@@ -1,35 +1,35 @@
 package com.gui.car_rental_common.commands;
 
+import com.gui.car_rental_common.dtos.BookingDto;
+
 import java.util.UUID;
 
 public class ReserveCarCommand {
-    private UUID carId;
+    private BookingDto bookingDto;
     private UUID sagaTransactionId;
+
+    public ReserveCarCommand(BookingDto bookingDto, UUID sagaTransactionId) {
+        this.bookingDto = bookingDto;
+        this.sagaTransactionId = sagaTransactionId;
+    }
 
     public ReserveCarCommand() {
     }
 
-    public ReserveCarCommand(UUID carId, UUID sagaTransactionId) {
-        this.carId = carId;
-        this.sagaTransactionId = sagaTransactionId;
+    public BookingDto getBookingDto() {
+        return bookingDto;
     }
 
-    public UUID getCarId() {
-        return carId;
-    }
-
-    public void setCarId(UUID carId) {
-        this.carId = carId;
-    }
 
     public UUID getSagaTransactionId() {
         return sagaTransactionId;
     }
 
+    public void setBookingDto(BookingDto bookingDto) {
+        this.bookingDto = bookingDto;
+    }
+
     public void setSagaTransactionId(UUID sagaTransactionId) {
         this.sagaTransactionId = sagaTransactionId;
     }
-
-
-
 }
