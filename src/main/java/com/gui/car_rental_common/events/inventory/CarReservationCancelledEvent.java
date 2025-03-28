@@ -1,21 +1,20 @@
-package com.gui.car_rental_common.events.booking;
+package com.gui.car_rental_common.events.inventory;
 
 import com.gui.car_rental_common.dtos.BookingDto;
 
 import java.util.UUID;
 
-public class BookingCreationFailedEvent {
+public class CarReservationCancelledEvent {
 
     private UUID sagaTransactionId;
-
     private BookingDto bookingDto;
-    private String message;
-    public BookingCreationFailedEvent(UUID sagaTransactionId, BookingDto bookingDto) {
-        this.sagaTransactionId = sagaTransactionId;
-        this.bookingDto = bookingDto;
+
+    public CarReservationCancelledEvent() {
     }
 
-    public BookingCreationFailedEvent() {
+    public CarReservationCancelledEvent(UUID sagaTransactionId, BookingDto bookingDto) {
+        this.sagaTransactionId = sagaTransactionId;
+        this.bookingDto = bookingDto;
     }
 
     public UUID getSagaTransactionId() {
@@ -26,14 +25,6 @@ public class BookingCreationFailedEvent {
         this.sagaTransactionId = sagaTransactionId;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public BookingDto getBookingDto() {
         return bookingDto;
     }
@@ -41,4 +32,5 @@ public class BookingCreationFailedEvent {
     public void setBookingDto(BookingDto bookingDto) {
         this.bookingDto = bookingDto;
     }
+
 }
