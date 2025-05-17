@@ -1,7 +1,9 @@
 package com.gui.car_rental_common.dtos;
 
+import jakarta.validation.constraints.NotNull;
+
 public class PaymentDto {
-    @NotNu
+    @NotNull
     private String cardToken;
 
     private String paymentMethod;
