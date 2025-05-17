@@ -8,15 +8,13 @@ import java.util.UUID;
 public class CarReservedEvent {
     private UUID sagaTransactionId;
     private BookingDto bookingDto;
-    private BigDecimal pricePerDay;
 
     public CarReservedEvent() {
     }
 
-    public CarReservedEvent(UUID sagaTransactionId, BookingDto bookingDto, BigDecimal pricePerDay) {
+    public CarReservedEvent(UUID sagaTransactionId, BookingDto bookingDto) {
         this.sagaTransactionId = sagaTransactionId;
         this.bookingDto = bookingDto;
-        this.pricePerDay = pricePerDay;
     }
 
     public UUID getSagaTransactionId() {
@@ -27,9 +25,6 @@ public class CarReservedEvent {
         return bookingDto;
     }
 
-    public BigDecimal getPricePerDay() {
-        return pricePerDay;
-    }
 
 
     public void setSagaTransactionId(UUID sagaTransactionId) {
@@ -40,7 +35,4 @@ public class CarReservedEvent {
         this.bookingDto = bookingDto;
     }
 
-    public void setPricePerDay(BigDecimal pricePerDay) {
-        this.pricePerDay = pricePerDay;
-    }
 }
