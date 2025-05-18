@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 public class PaymentDto {
     @NotNull
     private String cardToken;
-    @NotN
+    @NotNull
     private String paymentMethod;
 
     private String payerEmail;
