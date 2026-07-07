@@ -6,7 +6,6 @@ import java.util.UUID;
 
 public class BookingDto {
     private String email;
-    private UUID userId;
     private UUID carId;
 
     private UUID bookingId;
@@ -17,9 +16,8 @@ public class BookingDto {
     private BigDecimal amount;
     private PaymentDto paymentDto;
 
-    public BookingDto(String email, UUID userId, UUID carId, UUID bookingId, LocalDateTime rentalStartDate, LocalDateTime rentalEndDate, BigDecimal pricePerDay, BigDecimal amount, PaymentDto paymentDto) {
+    public BookingDto(String email, UUID carId, UUID bookingId, LocalDateTime rentalStartDate, LocalDateTime rentalEndDate, BigDecimal pricePerDay, BigDecimal amount, PaymentDto paymentDto) {
         this.email = email;
-        this.userId = userId;
         this.carId = carId;
         this.bookingId = bookingId;
         this.rentalStartDate = rentalStartDate;
@@ -74,14 +72,6 @@ public class BookingDto {
 
     public void setPricePerDay(BigDecimal pricePerDay) {
         this.pricePerDay = pricePerDay;
-    }
-
-    public UUID getUserId() {
-        return userId;
-    }
-
-    public void setUserId(UUID userId) {
-        this.userId = userId;
     }
 
     public void setEmail(String email) {
